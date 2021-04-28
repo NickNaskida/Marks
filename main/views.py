@@ -5,17 +5,17 @@ from django.contrib.auth.models import User as registered_users
 from enter.models import enter_marks
 from django.db.models import Count
 
-def get_ip(request):
+'''def get_ip(request):
 	adress = request.META.get('HTTP_X_FORWARDED_FOR')
 	if adress:
 		ip = adress.split(',')[-1].strip()
 	else:
 		ip = request.META.get('REMOTE_ADDR')
-	return ip
+	return ip'''
 
 def home(request):
 		
-	ip = get_ip(request)
+	'''ip = get_ip(request)
 	u = User(user=ip)
 	result = User.objects.filter(Q(user__icontains=ip))
 	if len(result) == 1:
@@ -23,9 +23,9 @@ def home(request):
 	elif len(result) > 1:
 		pass
 	else:
-		u.save()
+		u.save()'''
 
-	count = User.objects.count()
+	count = 1 #User.objects.count()
 
 	users_count = registered_users.objects.count()
 
