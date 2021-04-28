@@ -5,15 +5,15 @@ from django.contrib.auth.models import User as registered_users
 from enter.models import enter_marks
 from django.db.models import Count
 
-def home(request):
-
-	def get_ip(request):
+def get_ip(request):
 		adress = request.META.get('HTTP_X_FORWARDED_FOR')
 		if adress:
-			ip = adress.split(',')[-1].strip()
+			ip = adress.split(',')[0] #[-1].strip()
 		else:
 			ip = request.META.get('REMOTE_ADDR')
 		return ip
+		
+def home(request):
 		
 	ip = get_ip(request)
 	u = User(user=ip)
