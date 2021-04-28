@@ -1,0 +1,104 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block username %}
+	{% if user.is_authenticated %}
+		{{ user.first_name }}<br>
+		{{ user.last_name}}
+	{% else %}	
+		Hello, log in
+		<br>
+		to continue
+	{% endif %}	
+{% endblock %}
+
+{% block content %}
+	{% load static %}
+	<div class="left">	
+
+		<h1 class="title__content">Welcome to Marks</h1>
+		<br>
+		<h4 class="about__inner">Hello, welcome to marks...</h4>
+		<br>
+		<ul class="instructions">
+			<li>Choose your subjects in directory page 📚</li>
+			<li>Choose your semeser start/end dates 📅</li>
+			<li>Enter your marks in en enter page 📝</li>
+			<li>See your average marks and stats in reports page 📊</li>
+		</ul>
+		<br>	
+		
+		<div class="statistics">
+			<div class="visits">
+				<div class="element">
+					<i class="fas fa-eye fa-2x"></i>
+				</div>
+				<div class="info__stats__visitors">
+					<span class="num">{{ count }}</span>
+					<br>
+					<small>Guests</small>
+				</div>
+			</div>
+			<div class="reg__users">
+				<div class="element">
+					<i class="fas fa-users fa-2x"></i>
+				</div>
+				<div class="info__stats__users">
+					<span class="num">{{users_count}}</span>
+					<br>
+					<small>Users</small>
+				</div>
+			</div>
+			<div class="marks">
+				<div class="element">
+					<i class="fas fa-calculator fa-2x"></i>
+				</div>
+				<div class="info__stats__marks">
+					<span class="num">{{total}}</span>
+					<br>
+					<small>Total Marks</small>
+				</div>
+			</div>
+			<div class="copyright">
+				<div class="copyright__year">
+					<span class="num">©️{% now "Y" %}</span>
+					<br>
+					<small>V 1.0</small>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	
+	<div class="right">
+		<div class="card">
+			
+			<div class="avatar">
+				<div class="circle"></div>
+				<img src="{% static 'main/img/myavatar1.png' %}">
+			</div>
+			
+			<div class="info">
+				<h1 class="title">Nikoloz<br>Naskidashvili</h1>
+
+				<h3><br>About me:<br>I am 15 years old teenager from Georgia, Tbilisi. I have started learning python Django. This is my first website🌐 written on Django framework. Hope you will enjoy it📱💻</h3>
+				<h3 class="contacts"><br>Contacts:</h3>
+			</div>	
+			
+			<div class="social">
+
+				<button class="butt1"><a href="https://www.facebook.com/nika.naskidashvili.50"><i class="fab fa-facebook-f fa-2x"></i></a></button>
+				<button class="butt2"><a href="https://www.instagram.com/nika_nasyida/"><i class="fab fa-instagram fa-2x"></i></a></button>
+				<button class="butt3"><a href="{% url 'sendmail' %}"><i class="far fa-envelope fa-2x"></i></a></button>
+
+			</div>
+		
+		</div>			
+	</div>
+	
+	
+
+
+{% endblock %}
+

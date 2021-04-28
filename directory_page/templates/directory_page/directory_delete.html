@@ -1,0 +1,36 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}Delete{% endblock %}
+
+{% block username %}
+	{% if user.is_authenticated %}
+		{{ user.first_name }}<br>
+		{{ user.last_name}}
+	{% else %}	
+		Hello, log in
+		<br>
+		to continue
+	{% endif %}	
+{% endblock %}
+
+{% block content %}	
+	<div class="delete">
+		<center>
+			{% if has_mark > 0 %}
+				<h5>You have a mark in {{ item }}!!</h5>
+				<br>
+				<a class="btn btn-sm btn-warning" href="{% url 'directory_page' %}">Back</a>
+			{% else %}	
+				<h5>Are you sure you want to delete: {{ item }}?</h5>
+				<br>
+				<form action="{% url 'directory_delete' item.id %}" method="POST">
+					{% csrf_token %}
+					<a class="btn btn-sm btn-warning" href="{% url 'directory_page' %}">Cancel</a>
+					<input class="btn btn-sm btn-danger" type="submit" name="Confirm">
+				</form>
+			{% endif %}
+		</center>
+	</div>	
+{% endblock %}

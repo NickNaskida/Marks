@@ -1,0 +1,83 @@
+{% extends 'main/layout.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Reports{% endblock %}
+
+{% block username %}
+	{% if user.is_authenticated %}
+		{{ user.first_name }}<br>
+		{{ user.last_name}}
+	{% else %}	
+		Hello, log in
+		<br>
+		to continue
+	{% endif %}	
+{% endblock %}
+	
+{% block content %}
+	<div class="wrapper">
+		<div class="avg">
+			<div class="f__avg">
+				<div class="mark__avg">
+				<span>
+					{% if f_avg == 0 %}
+						-
+					{% else %}
+						{{ f_avg }}
+					{% endif %}
+				</span>
+				</div>
+				<div class="mark__text"><small>First semester<br>Average mark</small></div>
+			</div>
+			<div class="s__avg">
+				<div class="mark__avg">
+					<span>
+					{% if s_avg == 0 %}
+						-
+					{% else %}
+						{{ s_avg }}
+					{% endif %}
+					</span>
+				</div>
+				<div class="mark__text"><small>Second semester<br>Average mark</small></div>
+			</div>
+			<div class="b__avg">
+				<div class="mark__avg">
+					<span>
+						{{ b_avg }}						
+					</span>
+				</div>
+				<div class="mark__text"><small>Both semester<br>Average mark</small></div>
+			</div>
+		</div>
+		<div class="filters">
+			<center>
+				<form method="get">
+					{{ filter.form|crispy}}
+					<button class="btn btn-primary" type="submit">Filter</button>
+					
+				</form>
+			</center>	
+		</div>
+		<div class="reports__table">
+			
+				
+					<table class="table">
+						<tr>
+							<th>Subject📚</th>
+							<th>Mark🟡</th>
+							<th>Date📆</th>
+						</tr>
+						{% for i in table_data %}
+							<tr>
+								<td>{{ i.subject }}</td>
+								<td>{{ i.mark }}</td>
+								<td>{{ i.enter_date|date:"d M Y" }}</td>
+							</tr>	
+						{% endfor %}
+					</table>
+
+			
+		</div>
+	</div>	
+{% endblock %}

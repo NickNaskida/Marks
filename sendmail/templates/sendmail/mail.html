@@ -1,0 +1,47 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}Email{% endblock %}
+
+{% block username %}
+	{% if user.is_authenticated %}
+		{{ user.first_name }}<br>
+		{{ user.last_name}}
+	{% else %}	
+		Hello, log in
+		<br>
+		to continue
+	{% endif %}	
+{% endblock %}
+
+{% block content %}
+	<div class="em-left">
+		<div class="contact1-pic">
+			<img src="{% static 'main/img/email.png' %}" alt="IMG">
+		</div>
+	</div>
+	<div class="em-right">
+		<span class="contact1-form-title">
+			Get in touch
+		</span> 
+		<fieldset class="form-group">
+			<form action="{% url 'sendmail'%}" method="POST">
+				{% csrf_token %}
+				{{ form|crispy }}
+				<br>
+
+				<div class="container-contact1-form-btn">
+					<button class="sendbutt" type="submit">
+						<span>
+							Send Email
+						</span>
+					</button>
+				</div>
+				
+			</form>
+		</fieldset>	
+	</div>
+		
+
+{% endblock %}

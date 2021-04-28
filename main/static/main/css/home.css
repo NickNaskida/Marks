@@ -1,0 +1,1627 @@
+html, body {
+	margin: 0;
+	font-family: 'Montserrat',
+	sans-serif;
+	font-size: 15px;
+	background-color: #14171a;
+	perspective: 2000px;
+	pointer-events: auto;
+	/*overflow: hidden;*/
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+
+*,
+*:before,
+*:after{
+	box-sizing: border-box;
+}
+
+
+
+
+/*===========container===========*/
+.container{
+	width: 100%;
+	max-width: 1400px;
+	margin: 0 auto;
+	padding-left: 20px;
+	padding-right: 20px;
+	height: 100%;
+
+}
+
+
+/*===========header===========*/
+.header {
+	padding: 10px 0;
+	height: 80px;
+	background-color: #0c1013;
+	box-shadow: 0 0 19px 2px rgb(0 0 0 / 91%);	
+}	
+
+.header__inner {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+/*===========user===========*/
+.user {
+	display: flex;
+}
+
+.user__content {
+	padding-top: 4px;
+	padding-bottom: 4px;
+	padding-left: 9px;
+}
+
+.user__name {
+	font-size: 16px;
+	line-height: 18px;
+	color: #ffffff;
+	font-weight: 700; 
+}
+
+.site__name {
+	font-size: 13px;
+	line-height: 20px;
+	color: #ffffff;
+	font-weight: 400;
+}
+
+
+/*===========nav===========*/
+.nav {
+	display: flex;
+	float: left;
+}
+
+.nav__content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.nav__link {
+	padding: 10px 20px;
+	font-size: 16px;
+	color: #ffffff;
+	text-transform: uppercase;
+	font-weight: 700;
+	text-decoration: none;
+	transition: transform .4s ease;	
+}
+
+a:hover {
+	color: #ffff00;
+	transform: scale(1.08);
+}
+
+nav__link:hover{
+	color: #ffff00;
+	transform: scale(1.08);
+}
+
+.burger {
+	display: none;
+}
+
+/*===========content===========*/
+.content {
+	max-width: 1400px;
+	/*max-height: 890px;*/
+	min-height: 80vh; 
+	width: 100%;
+	padding: 5px 0;
+	justify-content: center;
+	align-items: center;
+	background-color: #0c1013; 
+	box-shadow: 0 0 19px 2px rgb(0 0 0 / 91%);	
+	margin: 40px auto;	
+}
+
+.content__inner {
+	display: flex;
+	align-items: center;
+	justify-content:center;
+	min-height: 80vh;
+}
+
+/*===========left===========*/
+div .right {
+	width: 25%;
+	height: 100%;
+	margin: 30px auto;
+	padding-right: 17px;
+	/*max-height: 800px;*/
+	align-items: center;
+	justify-content: center;
+	display: flex;
+	max-width: 400px;
+	float: right;
+	/*float: left;*/
+
+}
+
+div .card {
+	min-height: 600px;
+	width: 330px ;
+	background: #ffffff;
+	border-radius: 25px;
+	padding: 0 20px;
+	box-shadow: 0 20px 20px rgba(0,0,0,0.2), 0px 0px 50px rgba(0,0,0,0.2);	
+	float: left;
+	transform-style: preserve-3d;
+}
+
+
+.avatar {
+	min-height: 300px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.avatar img{
+	width: 260px;
+	z-index: 2;
+	margin-top: 56px;
+	border-radius: 150px;
+	transition: all 0.75s ease-out;
+}
+
+div .circle {
+	width: 300px;
+	height: 300px; 
+	background: linear-gradient(
+		to right,
+		rgba(249,255,0,0.75),
+		rgba(48,255,0,0.75)
+	);
+	position: absolute;
+	border-radius: 50%;
+	z-index: 1;
+	margin-top: 10px;
+}
+
+div .title {
+	transition: all 0.75s ease-out;
+}
+
+div .info h1 {
+	padding-top: 20px;
+	font-size: 30px;
+	font-weight: 700;
+	line-height: 30px;
+	color: #000000;
+}
+
+div .info h3 {
+	font-size: 16px;
+	font-weight: 500;
+	color: #000000;
+	transition: all 0.75s ease-out;
+}
+
+div .social {
+	padding: 10px 35px; 
+	display: flex;
+	justify-content: space-between; 
+	border: none;
+}
+
+div .butt1 {
+	width: 55px;
+	height: 55px;
+	position: relative;
+	box-sizing: border-box;
+	border-radius: 50%;
+	border: none;
+	transition: all 0.75s ease-out;
+	cursor: pointer;
+	pointer-events: auto;
+}
+
+div .butt1:hover {
+	color: #000cad;
+	transform: scale(1.2);
+	background: linear-gradient(
+		to right,
+		rgba(249,255,0,0.75),
+		rgba(48,255,0,0.75)
+	);
+	cursor: pointer;
+	pointer-events: auto;
+}
+
+div .butt2 {
+	width: 55px;
+	height: 55px;
+	position: relative;
+	box-sizing: border-box;
+	border-radius: 50%;
+	border: none;
+	transition: all 0.75s ease-out;
+	cursor: pointer;
+	pointer-events: auto;
+}
+
+div .butt2:hover {
+	color: #000cad;
+	transform: scale(1.2);
+	background: linear-gradient(
+		to right,
+		rgba(249,255,0,0.75),
+		rgba(48,255,0,0.75)
+	);
+	cursor: pointer;
+	pointer-events: auto;
+}
+
+div .butt3 {
+	width: 55px;
+	height: 55px;
+	position: relative;
+	box-sizing: border-box;
+	border-radius: 50%;
+	border: none;
+	transition: all 0.75s ease-out;
+	cursor: pointer;
+	pointer-events: auto;
+}
+
+div .butt3:hover {
+	color: #000cad;
+	transform: scale(1.2);
+	background: linear-gradient(
+		to right,
+		rgba(249,255,0,0.75),
+		rgba(48,255,0,0.75)
+	);
+	cursor: pointer;
+	pointer-events: auto;
+}
+
+
+div .fab {
+	text-shadow: 0 2px 5px rgba(0,0,0,.2);
+	transition: 0.5s;
+	transform: rotateY(0deg) scale(0.8);
+	opacity: 0.7;
+	color: #35e9f2;
+} 
+
+
+div .fab:hover {
+	color: #35e9f2;
+	opacity: 1;
+	transform: scale(1.2);
+} 
+
+div .far {
+	text-shadow: 0 2px 5px rgba(0,0,0,.2);
+	transition: 0.5s;
+	transform: rotateY(0deg) scale(0.8);
+	opacity: 0.7;
+	color: #35e9f2;
+} 
+
+div .far:hover {
+	color: #35e9f2;
+	opacity: 1;
+	transform: scale(1.2);
+} 
+/*===========right===========*/
+div .left {
+	padding: 40px 50px;
+	margin: 30px auto;
+	width: 75%;
+	height: 100%;
+	justify-content: center;
+	/*float: right;*/
+	float: left;
+}
+
+div .title__content {
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+
+div .left h1 {
+	padding-top: 60px;
+	font-size: 40px;
+	font-weight: 700;
+	color: #ffffff;
+	text-align: center;
+}
+
+div .left h2 {
+	padding-top: 40px;
+	font-size: 25px;
+	font-weight: 500;
+	color: #ffffff;
+	text-align: left;
+}
+
+div .left h4 {
+	padding-top: 15px;
+	font-size: 18px;
+	font-weight: 300;
+	color: #ffffff;
+	text-align: left;
+}
+
+.instructions {
+	font-size: 15px;
+	color: white;
+	font-weight: 500;
+	margin-left: 30px;
+}
+
+.about__inner {
+	margin-left: 30px;
+}
+
+.email__me__link {
+
+	text-decoration: none;
+	color: white;
+}
+
+.email__me__span:hover {
+	color: lime;
+	cursor: pointer;	
+}
+
+/*===========statistics===========*/
+
+div .statistics {
+	position: relative;
+    z-index: 3;
+    padding: 17px;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+
+div .visits {
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    margin-right: 70px; 
+}
+
+div .element {
+	position: relative;
+    height: 35px;
+    width: 35px;
+    margin: 0;
+    padding: 5px;
+    z-index: 5;    
+    float: left;
+    size: 30px;
+    bottom: 5px;
+}
+
+div .element i{
+	color: #ffffff;
+}
+
+div .info__stats__visitors {
+    line-height: 15px;
+    float: left;
+    text-align: center;
+    margin-left: 9px;
+    height: 35px;
+    width: 35px;
+}
+
+div .info__stats__visitors span {
+	font-size: 20px;
+	font-weight: 700;
+	color: #6c00ff;
+}
+
+div .info__stats__visitors small {
+	color: #999999;
+}
+
+div .reg__users {
+	float: left;
+	margin-right: 70px; 
+}
+
+div .info__stats__users {
+    line-height: 15px;
+    float: left;
+    text-align: center;
+    margin-left: 15px;
+    height: 35px;
+    width: 35px;
+}
+
+div .info__stats__users span {
+	font-size: 18px;
+	font-weight: 700;
+	color: #00e6e6;
+}
+
+div .info__stats__users small {
+	color: #999999;
+}
+
+div .copyright {
+	float: left;
+	margin-right: 70px; 
+}
+
+div .copyright__year {
+    line-height: 15px;
+    float: left;
+    text-align: center;
+    margin-left: 15px;
+    height: 35px;
+    width: 35px;
+}
+
+div .copyright__year span {
+	font-size: 20px;
+	font-weight: 700;
+	color: #ffff00;
+}
+
+div .copyright__year small {
+	color: #999999;
+}
+
+div .marks {
+	float: left;
+	margin-right: 70px; 
+}
+
+div .info__stats__marks {
+    line-height: 15px;
+    float: left;
+    text-align: center;
+    margin-left: 5px;
+    height: 35px;
+}
+
+div .info__stats__marks span {
+	font-size: 18px;
+	font-weight: 700;
+	color: #ff8000;
+}
+
+div .info__stats__marks small {
+	color: #999999;
+}
+/*===========auth===========*/
+.auth {
+	float: left;
+	display: flex;
+	margin-left: 30px;
+	height: 100%;
+}
+
+.login {
+	padding: 6px 18px;
+	font-size: 15px;
+	font-weight: 700;
+	text-decoration: none;
+	transition: transform .4s ease;
+	margin-left: 20px;
+	display: inline-block;
+	border-radius: 4px;
+	background: linear-gradient(
+		to right,
+		rgba(249,255,0,0.75),
+		rgba(48,255,0,0.75)
+	); 
+	border: none;
+	color: #FFFFFF;
+	text-align: center;
+	width: 120px;
+	height: 33px;
+	transition: transform 0.5s;
+	cursor: pointer;
+	pointer-events: auto;
+}
+
+.register {
+	padding: 6px 18px;
+	font-size: 15px;
+	font-weight: 700;
+	text-decoration: none;
+	transition: transform .4s ease;
+	margin-left: 20px;
+	display: inline-block;
+	border-radius: 4px;
+	background: linear-gradient(
+		to right,
+		rgba(249,255,0,0.75),
+		rgba(48,255,0,0.75)
+	); 
+	border: none;
+	color: #FFFFFF;
+	text-align: center;
+	width: 120px;
+	height: 33px;
+	transition: transform 0.5s;
+	cursor: pointer;
+	pointer-events: auto;
+}
+
+.login span {
+	cursor: pointer;
+	pointer-events: auto;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+.login span:after {
+  	content: '\00bb';
+  	position: absolute;
+  	opacity: 0;
+  	top: 0;
+  	right: -20px;
+  	transition:  0.5s;
+}
+
+.login:hover span {
+  	padding-right: 25px;
+}
+
+.login:hover span:after {
+  	opacity: 1;
+  	right: 0;
+}
+
+.register span {
+  	cursor: pointer;
+  	pointer-events: auto;
+  	display: inline-block;
+  	position: relative;
+  	transition: 0.5s;
+}
+
+.register span:after {
+  	content: '\00bb';
+  	content-size: 10px;
+  	position: absolute;
+  	opacity: 0;
+  	top: 0;
+  	right: -20px;
+  	transition: 0.5s;
+}
+
+.register:hover span {
+  	padding-right: 25px;
+}
+
+.register:hover span:after {
+  	opacity: 1;
+  	right: 0;
+}
+
+/*===========alert===========*/
+.closebtn {
+ 	margin-left: 15px;
+ 	color: black;
+ 	font-weight: bold;
+ 	float: right;
+  	font-size: 22px;
+  	line-height: 20px;
+  	cursor: pointer;
+  	pointer-events: auto;
+  	transition: 0.3s;
+}
+
+
+.closebtn:hover {
+  	color: black;
+}
+
+/*===========register form===========*/
+fieldset .form-group {
+	color: #ffffff;
+	padding-top: 4px;
+}
+
+div .content-section-1 {
+	align-items: center;
+	justify-content: center;
+	max-width: 500px;
+	padding-bottom: 20px;
+}
+
+small .ml-2 {
+	text-decoration: none;
+	color: white;
+	cursor: pointer;
+	pointer-events: auto;
+}
+
+legend {
+	font-weight: 700;
+	color: white;
+	padding-bottom: 10px;
+}
+
+div .signin {
+	padding: 6px 14px;
+	font-size: 15px;
+	font-weight: 500;
+	text-decoration: none;
+	transition: transform .4s ease;
+	display: inline-block;
+	border-radius: 4px;
+	background: linear-gradient(
+		to right,
+		rgba(249,255,0,0.75),
+		rgba(48,255,0,0.75)
+	); 
+	border: none;
+	color: #FFFFFF;
+	text-align: center;
+	width: 100px;
+	transition: transform 0.5s;
+	cursor: pointer;
+	pointer-events: auto;
+}
+
+div .signin:hover {
+  	transform: scale(1.03);
+}
+
+
+
+/*===========form field styles===========*/
+
+div .content-section-2 {
+	align-items: center;
+	justify-content: center;
+	min-width: 300px;
+	max-width: 300px;
+
+}
+
+/*===========logout===========*/
+div .form-group {
+	color: #ffffff;
+	justify-content: center;
+	padding-bottom: 10px;
+}
+
+small .loginagain {
+	text-decoration: none;
+	color: white;
+	cursor: pointer;
+	pointer-events: auto;
+}
+
+
+
+/*================directory===================*/
+div .dir-right {
+	width: 60%;
+	float: left;
+	align-items: center;
+	justify-content: space-around;
+	display: flex;
+	padding: 40px 0;
+}
+
+div .dir__form span {
+	position: absolute;
+	font-size: 25px;
+	color: white;
+	font-weight: 500;
+	text-align: center;
+	bottom: 500px;
+	padding-bottom: 5px;
+	margin-left: 220px;
+}
+
+div .dir__form {
+	margin-left: 50px;
+	width: 100%;
+}
+
+div .dir-left {
+	width: 60%;
+	float: left;
+	align-items: center;
+	justify-content: center;
+	padding: 40px 90px;
+}
+
+/*================directory===================*/
+		  /*=======select box========*/
+select {
+	width: 15rem;
+	padding: 6px;
+	border-radius: 4px;
+	background-color: white;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 16px;
+	font-weight: 500;
+	cursor: pointer;
+	/*margin-bottom: 450px;*/
+}
+
+select:hover {
+	background: linear-gradient(
+		to right,
+		rgba(249,255,0,0.75),
+		rgba(48,255,0,0.75)
+	); 
+}
+/*================directory===================*/
+	/*======buttons and selectspace=======*/
+
+div .buttons {
+	position: relative;
+	float: left;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 100px;
+	padding-top: 10px;
+	
+}
+
+div .selectspace {
+	position: relative;
+	margin-right: 20px;
+	margin-left: 65px;
+	float: left;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 100px;
+	width: 44%;
+	padding-top: 10px;
+	display: flex;
+}
+
+/*================directory===================*/
+	/*====add/delete subject butt dir====*/
+
+div .buttons button {
+	font-weight: 700;
+}
+
+.addsubject { 
+	padding: 6px 14px;
+	font-size: 15px;
+	font-weight: 700;
+	text-decoration: none;
+	transition: transform .4s ease;
+	display: inline-block;
+	border-radius: 4px;
+	background: linear-gradient(
+		to right,
+		rgba(249,255,0,0.75),
+		rgba(48,255,0,0.75)
+	); 
+	border: none;
+	color: #FFFFFF;
+	text-align: center;
+	width: 100px;
+	transition: transform 0.5s;
+	cursor: pointer;
+	pointer-events: auto;
+	width: 150px;
+	height: 34px;
+	top: 40px;
+}
+
+.addsubject:hover {
+  	transform: scale(1.03);
+}
+/*================directory===================*/
+			/*====email me====*/
+div .emailme {
+	position: absolute;
+	color: white;
+	margin-top: 7px;
+}	
+
+/*================directory===================*/
+		  /*=======semester========*/
+div .semester {
+	position: absolute;
+	margin-top: 50px;
+	justify-content: center;
+	align-items: center;
+	font-size: 20px;
+	color: white;
+	text-align: center;
+}
+
+.semester button {
+	margin-left: 22px;
+	font-weight: 700;
+}
+
+.semester_dates {
+	padding: 6px 18px;
+	font-size: 15px;
+	font-weight: 700;
+	text-decoration: none;
+	transition: transform .4s ease;
+	margin-left: 26px;
+	display: inline-block;
+	border-radius: 4px;
+	background: linear-gradient(
+		to right,
+		rgba(249,255,0,0.75),
+		rgba(48,255,0,0.75)
+	); 
+	border: none;
+	color: #FFFFFF;
+	text-align: center;
+	width: 120px;
+	transition: transform 0.5s;
+	cursor: pointer;
+	pointer-events: auto;
+
+}
+
+.semester_dates:hover {
+	color: white;
+	transform: scale(1.03);
+}
+
+
+/*=====================tables======================*/
+
+
+.subject__table {
+	align-items: center;
+	justify-content: center;
+	height: 527px;
+  	overflow: auto;
+}
+
+.table {
+	background: white;
+	border-bottom: 0;
+	border-collapse: collapse;
+  	width: 100%;
+}
+
+
+td {
+  text-align: center;
+  padding: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  color: #000000;
+  text-align: center;
+  padding: 8px;
+  font-weight: 600;
+  font-size: 17px;
+  border-bottom: 1px solid #ddd;
+}
+
+.table>:not(caption)>*>* {
+    padding: .3rem 0.5rem;
+}
+
+/*=================== semester_dates =======================*/
+
+.info {
+	font-size: 19px;
+	color: #ffffff;
+}
+
+div .info__text {
+	justify-content: center;
+	align-items: center;
+	max-width: 320px;
+	padding-bottom: 20px;
+	padding-top: 20px;  
+}
+
+input[type="date"] {
+    position: relative;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  left: 0;
+  right: 0;
+  top:0;
+  bottom: 0;
+  cursor: pointer;
+}
+
+div .info__text ul {
+	color: white;
+}
+
+.yourdates {
+	color: white;
+	font-weight: 700;
+	padding-bottom: 5px;
+}
+
+/*=====================enter page=========================*/
+
+div .enter {
+	min-width: 218px;
+	float: left;
+	width: 15%;
+	margin-left: 90px;
+}
+
+div .data {
+	float: left;
+	width: 85%;
+	margin-left: 90px;
+	margin-right: 60px;
+	align-items: center;
+	justify-content: center;
+}
+/*=====================reports=========================*/
+div .reports__table {
+	width: 100%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: center;
+  	height: 468px;
+  	overflow: auto;
+}
+
+div .filters {
+	width: 100%;
+	margin-bottom:	10px;
+	padding-top: 20px;
+}
+
+/*ul.errorlist {
+    display: none;
+}*/
+
+div .filters button {
+	margin-left: 30px;
+}
+/*=====================reports=========================*/
+			 /*========filters========*/
+#div_id_subject {
+	float: left;
+	width: 218px;
+}
+
+#div_id_mark1_f {
+	float: left;
+	margin-left: 60px;
+	margin-right: 30px;
+	width: 70px;
+}
+
+#div_id_mark2_f {
+	float: left;
+	margin: 0px 30px;
+	width: 70px;
+}
+
+#div_id_enter_date_f {
+	float: left;
+	margin: 0px 30px;
+}
+/*=====================reports=========================*/
+			 /*======== AVG ========*/
+div .avg {
+	display: flex;
+	justify-content: center;
+	padding-bottom: 20px;
+	padding-top: 60px;
+}
+
+div .f__avg {
+	float: left;
+	margin-left: 30px;
+	margin-right: 30px;
+}	
+
+div .s__avg {
+	float: left;
+	margin-left: 30px;
+	margin-right: 30px;
+}	
+
+div .b__avg {
+	float: left;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+div .mark__avg {
+	float: left;
+	vertical-align: center;
+}
+
+div .mark__text {
+	margin-top: 5px;
+	float: left;
+	line-height: 13px;
+	color: white;
+	margin-left: 10px;
+}
+
+div .mark__avg span {
+	color: #ffff1a;
+	font-size: 26px;
+	font-weight: 700;
+}		
+
+/*===========================scrollbar==============================*/
+/* width */
+::-webkit-scrollbar {
+  	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  	background: #0c1013;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  	background: linear-gradient(180deg, rgba(101,98,98,1) 0%, rgba(189,186,196,1) 100%);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  	background: linear-gradient(180deg, rgba(101,98,98,1) 0%, rgba(189,186,196,1) 100%);
+}
+/*============================= contact form =======================*/
+/*============================= contact form =======================*/
+textarea.form-control {
+    max-height: 250px;
+    min-height: 100px;
+}
+	
+
+/*div .mess {
+	position: absolute;
+	padding-bottom: 550px;
+	width: 100%;
+}
+
+.mes {
+	color: #ffffff;
+}
+*/
+div .em-left {
+	float: left;
+	width: 40%;
+}
+
+div .em-right {
+	float: left;
+	width: 60%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 40px;
+}
+
+
+/*------------------------------------------------------------------
+[  ]*/
+.contact1-pic {
+  width: 400px;
+  margin: 30px;
+}
+
+.contact1-pic img {
+  max-width: 100%;
+}
+
+
+/*------------------------------------------------------------------
+[  ]*/
+.contact1-form {
+  width: 390px;
+}
+
+.contact1-form-title {
+  display: block;
+  font-size: 34px;
+  color: #ffffff;
+  line-height: 1.2;
+  text-align: center;
+  padding-bottom: 15px;
+  font-weight: 600;
+}
+
+/*---------------------------------------------*/
+.container-contact1-form-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.sendbutt {
+	padding: 6px 18px;
+	font-size: 15px;
+	font-weight: 700;
+	text-decoration: none;
+	transition: transform .4s ease;
+	display: inline-block;
+	border-radius: 4px;
+	background: linear-gradient(
+		to right,
+		rgba(249,255,0,0.75),
+		rgba(48,255,0,0.75)
+	); 
+	border: none;
+	color: #FFFFFF;
+	text-align: center;
+	width: 150px;
+	transition: transform 0.5s;
+	cursor: pointer;
+	pointer-events: auto;
+}
+
+.sendbutt span {
+	cursor: pointer;
+	pointer-events: auto;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+
+.sendbutt span:after {
+  	content: '\00bb';
+  	position: absolute;
+  	opacity: 0;
+  	top: 0;
+  	right: -20px;
+  	transition:  0.5s;
+}
+
+.sendbutt:hover span {
+  	padding-right: 25px;
+}
+
+.sendbutt:hover span:after {
+  	opacity: 1;
+  	right: 0;
+}
+
+/*============================= delete =======================*/
+div .delete {
+	margin-bottom: 100px;
+}
+
+div .delete h5 {
+	color: white;
+}
+
+.btn-warning {
+    margin-right: 20px;
+}
+
+input .btn-danger {
+    margin-left: 20px;
+}
+
+div .gif1 {
+	margin-top: 20px;	
+}
+
+
+
+/*=============================================*/
+/*=============================================*/
+div .burger button {
+	color: white;
+	cursor: pointer;
+	background: transparent;
+	border: none;
+	padding: 3px 7px;
+	border-radius: 5px;
+}
+
+/*=============================================*/
+/*=============================================*/
+
+@media (max-width: 1400px){
+	.container1 {
+		max-width: 1240px;
+	}
+	.content {
+		max-width: 1240px;
+	}
+	.avatar img {
+    	width: 230px;
+	}
+	div .circle {
+    	width: 270px;
+    	height: 270px;
+    }
+}
+
+/*@media (max-width: 1320px){
+	.container {
+		max-width: 1200px;
+	}
+	.content {
+		max-width: 1200px;
+	}
+}*/
+
+@media (max-width: 1220px){
+	.container {
+		max-width: 980px;
+	}
+	.content {
+		max-width: 980px;
+	}
+	.contact1-pic {
+    	width: 85%;
+  	}
+  	.avatar img {
+    	width: 220px;
+	}
+	div .circle {
+    	width: 260px;
+    	height: 260px;
+    }
+  	.contact1-form {
+    	width: 44%;
+  	}
+  	.auth {
+    	margin-left: 10px;
+	}
+	.nav__link {
+    	padding: 10px 10px;
+	}
+	.login {
+		width: 90px;
+	}
+	div .visits {
+		margin-right: 40px;
+	}
+	div .reg__users {
+    	margin-right: 30px;
+	}
+	div .marks {
+    	margin-right: 20px;
+	}
+	div .copyright {
+    	margin-right: 30px;
+	}
+	div .right {
+    	width: 32%;
+    }
+    div .left {
+    	width: 68%;
+    }
+    div .dir-left {
+    	padding: 30px 0px;
+    	width: 85%;
+	}
+	div .dir-right {
+    	width: 100%;
+    	margin-bottom: 26px;
+	}
+	div .dir__form {
+    	margin-left: 0px;
+	}
+	div .left h1 {	
+		font-size: 34px;
+	}
+}
+
+@media (max-width: 992px){
+	.container{
+		max-width: 750px;
+	}
+	.content {
+		max-width: 750px;
+	}
+	.contact1-pic {
+    	width: 80%;
+  	}
+ 
+
+  	.header__inner {
+  		/*display: initial;*/
+  	}
+  	.nav__content {   	
+    	position: absolute;
+    	right: 0;
+    	top: 80px;
+    	display: block;	
+    	width: 100%;
+    	background-color: #14171a;
+    	padding-top: 6px;
+    	display: none;
+    }
+    .nav { 
+    	flex-direction: column;
+    	float: none;
+    	text-align: center;
+    }
+    .nav__content.show {
+    	display: block;
+    }
+    .nav__link {
+    	padding: 10px 10px;
+    	font-size: 14px;
+    }
+    .auth {
+    	float: none;
+    	margin-left: 0px;
+    	justify-content: center;
+    	padding: 10px 0px;
+    }
+    .burger {
+		display: block;
+	}
+	.login {
+		margin-left: 0px;  
+	}
+	#admin__butt {
+		margin-right: 10px;
+	}
+	#logout__butt {
+		margin-left: 10px;
+	}
+
+	.content__inner {
+    	flex-direction: column;
+    }
+    div .left {
+    	float: none;
+    	width: 100%;
+    }
+    div .right {
+    	float: none;
+    	width: 100%;
+    	padding-right: 0px;
+    }
+    div .em-left {
+    	display: none;
+    }
+    div .em-right {
+    	float: none;
+    	width: 100%;
+	}
+	div .enter {
+    	margin-left: 0px;
+    	margin-top: 50px;
+    	margin-bottom: 50px;
+	}
+	div .data {
+		margin-right: 15px;
+		margin-left: 15px;
+	}
+	#div_id_mark1_f {
+    	margin-left: 30px;
+    	margin-right: 15px;
+	}
+	#div_id_enter_date_f {
+    	float: left;
+    	margin-left: 15px;
+    	margin-right: 20px;
+	}
+}
+
+@media (max-width: 767px){
+	.container{
+		max-width: none;
+	}
+	.content {
+		max-width: none;
+	}
+	.contact1-pic {
+    	display: none;
+  	}
+  	div .em-right {
+		width: 100%
+	}
+	div .left {
+		padding: 10px 5px;
+		margin: 10px auto;
+	}
+	.user__name {
+    	font-size: 14px;
+	}
+	.site__name {
+    	font-size: 12px;
+	}
+	div .statistics {
+		display: grid;
+		height: 100%;
+	}
+	div .visits {
+    	margin-right: 0px;
+    	padding-bottom: 30px; 
+	}
+	div .reg__users {
+    	margin-right: 0px;
+    	padding-bottom: 30px; 
+	}
+	div .marks {
+    	margin-right: 0px;
+    	padding-bottom: 30px; 
+	}
+	div .copyright {
+    	margin-right: 0px;
+	}
+	div .em-right {
+    	float: none;
+	}
+	div .semester {
+		font-size: 18px;
+	}
+	div .form-control {
+		font-size: 0.8rem;
+	}
+	div .data {
+		margin-left: 0px;
+		margin-right: 0px;
+		width: 92%;
+	}
+	div .avg {
+		display: block;
+		margin-bottom: 140px;
+	}
+	div .f__avg {
+    	margin-left: 120px;
+    	margin-right: 0px;
+    	margin-bottom: 15px;
+	}
+	div .s__avg {
+    	margin-left: 120px;
+    	margin-right: 0px;
+    	margin-bottom: 15px;
+	}
+	div .b__avg {
+    	margin-left: 120px;
+    	margin-right: 0px;
+	}
+}
+
+@media (max-width: 580px){
+	div .selectspace {
+    	margin-left: 40px;
+	}
+}
+
+@media (max-width: 450px){
+	div .selectspace {
+    	margin-left: 45px;
+	}
+
+	.buttons button {
+		font-size: 12px;
+		width: 105px;
+	}
+
+	.semester_dates {
+		font-size: 12px;
+	}
+	div .filters {
+		margin-left: 20px;
+	}
+	div .filters button {
+    	margin-right: 12px;
+    	margin-left: 0px;
+	}
+}
+
+@media (max-width: 375px){
+	div .selectspace {
+    	margin-left: 31px;
+	}
+	.buttons button {
+		font-size: 12px;
+		width: 105px;
+	}
+	div .filters {
+    margin-left: 7px;
+	}
+	div .f__avg {
+    	margin-left: 100px;
+	}
+	div .s__avg {
+    	margin-left: 100px;
+	}
+	div .b__avg {
+    	margin-left: 100px;
+	}
+}
+
+@media (max-width: 360px){
+	div .selectspace {
+    	margin-left: 20px;
+	}
+	th {
+		font-size: 13px;
+	}
+	td {
+		font-size: 12px;
+	}
+	div .f__avg {
+    	margin-left: 75px;
+	}
+	div .s__avg {
+    	margin-left: 75px;
+	}
+	div .b__avg {
+    	margin-left: 75px;
+	}
+	div .filters {
+    	margin-left: 0px;
+	}
+	div .filters {
+    	margin-left: 26px;
+	}
+}	
+/*=======height========*/
+@media (min-height: 1100px){
+	.content {
+		min-height: 50vh;		
+	}
+	.content__inner {
+		min-height: 50vh;
+	}
+}
+/*
+@media (max-height: 1060px){
+	.container{
+		max-height: 740px;
+	}
+	.content {
+		min-height: 740px		
+	}
+	.content__inner {
+		min-height: 700px
+	}
+}
+
+/*@media (max-height: 889px){
+
+	.content {
+		max-height: 860px		
+	}
+}
+
+@media (max-height: 889px){
+
+	.content {
+		max-height: 860px		
+	}
+}
+/*=============================================*/

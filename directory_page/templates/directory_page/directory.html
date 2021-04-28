@@ -1,0 +1,64 @@
+{% extends 'main/layout.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}Directory{% endblock %}
+
+{% block username %}
+	{% if user.is_authenticated %}
+		{{ user.first_name }}<br>
+		{{ user.last_name}}
+	{% else %}	
+		Hello, log in
+		<br>
+		to continue
+	{% endif %}	
+{% endblock %}
+
+{% block content %}
+		<!--=============   left   ===============-->
+		<div class="dir-left">
+			<div class="subject__table">
+				<table class="table">
+					<tr>
+						<th>Your Subjects 📚</th>
+						<th>Remove ❌ </th>
+					</tr>
+					{% for i in subjects %}
+						<tr>
+							<td>{{ i.subject }}</td>
+							<td><a class="btn btn-sm btn-danger" href="{% url 'directory_delete' i.id %}">Remove</a></td>
+						</tr>	
+					{% endfor %}
+					
+				</table>						
+			</div>
+		</div>
+
+		<!--=============   right   ===============-->
+		<div class="dir-right">
+			
+			<div class="dir__form">
+				<form method="POST">
+					{% csrf_token %}
+					<div class="selectspace">	
+						{{ form|crispy }}
+					</div>	
+
+					<div class="buttons">
+						<button class="addsubject" type="submit">Add subject</button>
+					</div>
+				</form>
+			</div>
+
+			<!--<div class="emailme">
+				<h6 class="about__inner">If there isn't subject that you want, you can <a class="email__me__link" href="{% url 'sendmail' %}">email me </a> <br> and I will add it to the database</h6>
+			</div>-->
+
+			<div class="semester">
+				Add Semester start/end dates
+				<a class="semester_dates" href="{% url 'semester_dates' %}">Add dates</a>
+			</div>
+			
+		</div>
+	
+{% endblock %}

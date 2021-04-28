@@ -1,0 +1,52 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}Enter{% endblock %}
+
+{% block username %}
+	{% if user.is_authenticated %}
+		{{ user.first_name }}<br>
+		{{ user.last_name}}
+	{% else %}	
+		Hello, log in
+		<br>
+		to continue
+	{% endif %}	
+{% endblock %}
+
+{% block content %}	
+		<center>
+			<div class="enter">
+				<form method="POST">
+					{% csrf_token %}
+					{{ form|crispy }}
+					<br>
+					<center><button class="addsubject" type="submit">Add</button></center>
+				</form>
+			</div>
+		</center>
+		<div class="data">
+				<legend class="w-90 border-bottom mb-4"><h3>Last records:</h3></legend>
+				
+					<table class="table">
+						<tr>
+							<th>Subject📚</th>
+							<th>Mark🟡</th>
+							<th>Date📆</th>
+							<th>Remove❌</th>
+						</tr>
+						{% for i in table_data %}
+							<tr>
+								<td>{{ i.subject }}</td>
+								<td>{{ i.mark }}</td>
+								<td>{{ i.enter_date|date:"d M Y" }}</td>
+								<td>
+									<a class="btn btn-sm btn-danger" href="{% url 'enter_delete' i.id %}">Remove</a>			
+								</td>
+							</tr>	
+						{% endfor %}
+					</table>
+			</center>
+		</div>		
+{% endblock %}

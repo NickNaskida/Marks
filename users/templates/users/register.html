@@ -1,0 +1,41 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}User registration{% endblock %}
+
+{% block username %}
+	{% if user.is_authenticated %}
+		{{ user.first_name }}<br>
+		{{ user.last_name}}
+	{% else %}	
+		Hello, log in
+		<br>
+		to continue
+	{% endif %}
+{% endblock %}
+
+{% block content %}
+	{% if user.is_authenticated %}
+
+	{% else %}
+		<div class="content-section-1">
+			<form method="POST">
+				{% csrf_token %}
+				<fieldset class="form-group">
+					<br>
+					<legend class="border-bottom mb-2"><h2>User registration</h2></legend>
+					{{ form|crispy }}
+					<div class="form-group">
+						<button class="signin" type="submit">Sign up</button>
+					</div>
+				</fieldset>
+			</form>		
+			<div class="border-top pt-2">
+				<small class="text-muted">
+					Already have an account? <a class='ml-2' href="{% url 'login' %}">Sign in</a>
+				</small>
+			</div>		
+		</div>	
+	{% endif %}
+{% endblock %}

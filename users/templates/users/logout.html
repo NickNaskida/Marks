@@ -1,0 +1,29 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+{% block title %}User registration{% endblock %}
+
+{% block username %}
+	{% if user.is_authenticated %}
+		{{ user.first_name }}<br>
+		{{ user.last_name}}
+	{% else %}	
+		Hello, log in
+		<br>
+		to continue
+	{% endif %}
+{% endblock %}
+
+{% block content %}
+	<div class="content-section-1">	
+		<div class="form-group">	
+			<h3>You have been logged out</h3>
+			<br>
+			<div class="border-top pt-3">
+				<small class="text-muted">
+					<a class="loginagain" href="{% url 'login' %}">Log in again</a>
+				</small>
+			</div>				
+		</div>
+	</div>
+{% endblock %}

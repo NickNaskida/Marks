@@ -1,0 +1,41 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}Delete{% endblock %}
+
+{% block username %}
+	{% if user.is_authenticated %}
+		{{ user.first_name }}<br>
+		{{ user.last_name}}
+	{% else %}	
+		Hello, log in
+		<br>
+		to continue
+	{% endif %}	
+{% endblock %}
+
+{% block content %}
+	{% if key <= last_key %}
+		<div class="delete">
+			<center>
+				<h5>Nice try :)</h5>
+				<div class="gif1">
+					<img src="{% static 'main/img/laugh.gif' %}" width="250" height="150">
+				</div>
+			</center>
+		</div>
+	{% else %}		
+		<div class="delete">
+			<center>
+				<h5>Are you sure you want to delete: {{ item }}?</h5>
+				<br>
+				<form action="{% url 'enter_delete' item.id %}" method="POST">
+					{% csrf_token %}
+					<a class="btn btn-sm btn-warning" href="{% url 'enter' %}">Cancel</a>
+					<input class="btn btn-sm btn-danger" type="submit" name="Confirm">
+				</form>
+			</center>
+		</div>
+	{% endif %}	
+{% endblock %}
