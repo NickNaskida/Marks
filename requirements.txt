@@ -54,8 +54,6 @@ python-dotenv==0.17.0
 pyttsx3==2.90
 PyTweening==1.0.3
 pytz==2021.1
-pywin32==300
-pywin32-ctypes==0.2.0
 requests==2.25.1
 six==1.15.0
 soupsieve==2.2.1
