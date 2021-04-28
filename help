@@ -6,7 +6,9 @@ Debugging file
 
 
 
-
+pywin32==300
+pywin32-ctypes==0.2.0
+pypiwin32==223
 
 
 
