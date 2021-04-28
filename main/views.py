@@ -8,7 +8,7 @@ from django.db.models import Count
 def get_ip(request):
 	adress = request.META.get('HTTP_X_FORWARDED_FOR')
 	if adress:
-		ip = adress.split(',')[0] #[-1].strip()
+		ip = adress.split(',')[-1].strip()
 	else:
 		ip = request.META.get('REMOTE_ADDR')
 	return ip
