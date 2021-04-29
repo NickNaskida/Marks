@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import enter_mark
 from .models import enter_marks
 from django.views.generic import DeleteView
+from directory_page.models import Person_subjects
 
 @login_required
 def enter(request):
@@ -20,6 +21,8 @@ def enter(request):
 	else:
 		form = enter_mark()
 
+	form.fields['subject'].queryset = Person_subjects.objects.filter(user=request.user.id)
+		
 	table_data = enter_marks.objects.select_related()\
 		.filter(user= request.user.id).order_by('-id')[:10]
 
