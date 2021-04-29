@@ -139,10 +139,11 @@ STATICFILES_DIRS = [
     #'/var/www/static/',
 ]
 
-STATICFILES_STORAGE = 'whitenoise.storage.StaticFilesStorage'
+#STATICFILES_STORAGE = 'whitenoise.storage.StaticFilesStorage'
 #'whitenoise.storage.CompressedManifestStaticFilesStorage'
 DEBUG_PROPAGATE_EXCEPTIONS = True
 COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
