@@ -4,9 +4,19 @@ from django.contrib.auth.models import User
 from .forms import subject_add
 from .models import *
 from enter.models import enter_marks
+from semester_dates.models import dates
 
 @login_required
 def directory_page(request):
+	if len(dates.objects.filter(user=request.user.id)) == 0:
+		dates.objects.create(
+			user=request.user,
+			first_semester_start='2020-09-15',
+			first_semester_end='2020-12-31',
+			second_semester_start='2021-01-15',
+			second_semester_end='2021-07-01'
+			)
+
 	if request.method == 'POST': 
 		form = subject_add(request.POST)
 
