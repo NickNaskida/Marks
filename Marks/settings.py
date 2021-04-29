@@ -141,6 +141,8 @@ STATICFILES_DIRS = [
 
 STATICFILES_STORAGE = 'whitenoise.storage.StaticFilesStorage'
 #'whitenoise.storage.CompressedManifestStaticFilesStorage'
+DEBUG_PROPAGATE_EXCEPTIONS = True
+COMPRESS_ENABLED = os.environ.get('COMPRESS_ENABLED', False)
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
