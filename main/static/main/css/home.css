@@ -1251,9 +1251,13 @@ div .burger button {
 	border-radius: 5px;
 }
 
+
+
 /*=============================================*/
 /*=============================================*/
 
+/*=============================================*/
+/*=============================================*/
 @media (max-width: 1400px){
 	.container1 {
 		max-width: 1240px;
@@ -1267,6 +1271,9 @@ div .burger button {
 	div .circle {
     	width: 270px;
     	height: 270px;
+    }
+    div .social {
+    	padding: 10px 25px;
     }
 }
 
@@ -1290,7 +1297,7 @@ div .burger button {
     	width: 85%;
   	}
   	.avatar img {
-    	width: 220px;
+    	width: 221px;
 	}
 	div .circle {
     	width: 260px;
@@ -1352,7 +1359,9 @@ div .burger button {
 	.contact1-pic {
     	width: 80%;
   	}
- 
+ 	div .social {
+    	padding: 10px 35px;
+    }
 
   	.header__inner {
   		/*display: initial;*/
@@ -1366,6 +1375,7 @@ div .burger button {
     	background-color: #14171a;
     	padding-top: 6px;
     	display: none;
+
     }
     .nav { 
     	flex-direction: column;
@@ -1374,6 +1384,7 @@ div .burger button {
     }
     .nav__content.show {
     	display: block;
+    	z-index: 30;
     }
     .nav__link {
     	padding: 10px 10px;
@@ -1435,6 +1446,46 @@ div .burger button {
     	margin-left: 15px;
     	margin-right: 20px;
 	}
+
+	.login span:after {
+  		content: '';
+  		position: absolute;
+  		opacity: 0;
+  		top: 0;
+  		right: 0px;
+  		transition:  0.5s;
+	}
+
+	.login:hover span {
+	  	padding-right: 0px;
+	}
+
+	.login:hover span:after {
+  		opacity: 1;
+  		right: 0;
+	}
+
+
+
+	.register span:after {
+  		content: '';
+  		position: absolute;
+  		opacity: 0;
+  		top: 0;
+  		right: 0px;
+  		transition:  0.5s;
+	}
+
+	.register:hover span {
+	  	padding-right: 0px;
+	}
+
+	.register:hover span:after {
+  		opacity: 1;
+  		right: 0;
+	}
+
+
 }
 
 @media (max-width: 767px){
