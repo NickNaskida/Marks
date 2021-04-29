@@ -32,18 +32,12 @@ def enter(request):
 
 def deleteMark(request, pk):
 	item = enter_marks.objects.filter(user= request.user.id).get(id=pk)
-	last_item = enter_marks.objects.filter(user= request.user.id).order_by('-id')[:1].get()
 	
-	key = item.id
-	last_key = last_item.id - 10
-
 	if request.method == 'POST':
 		item.delete()
 		return redirect('enter')
 
 	data = {
 	'item': item,
-	'key': key,
-	'last_key': last_key
 	}
 	return render(request, 'enter/enter_delete.html', data)
