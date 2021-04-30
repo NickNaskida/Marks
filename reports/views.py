@@ -5,12 +5,13 @@ from semester_dates.models import dates
 from .filters import enter_marks_filter
 from django.db.models import Avg
 from django.db.models import Q
+from directory_page.models import Person_subjects
 
 @login_required
 def reports(request):
 	table_data = enter_marks.objects.select_related().filter(user = request.user.id).order_by('-enter_date')
 
-	tableFilter = enter_marks_filter(request.GET, queryset= table_data)
+	tableFilter = enter_marks_filter(request.GET, request=request.user.id, queryset= table_data) #
 	table_data = tableFilter.qs
 
 	model_data = dates.objects.get(user = request.user.id)

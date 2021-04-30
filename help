@@ -2,13 +2,27 @@ Debugging file
 
 ================================!!! BUGS !!!========================================
 
+
+
 ====================================================================================
 
 
 
-pywin32==300
-pywin32-ctypes==0.2.0
-pypiwin32==223
+
+
+
+
+
+
+<div class="delete">
+	<center>
+		<h5>Nice try :)</h5>
+		<div class="gif1">
+			<img src="{% static 'main/img/laugh.gif' %}" width="250" height="150">
+		</div>
+	</center>
+</div>
+
 
 
 
